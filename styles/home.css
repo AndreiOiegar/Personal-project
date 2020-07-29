@@ -10,6 +10,30 @@ body {
   /* background-position: absolute; */
 }
 
+h1 {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title-text{
+  position: relative;
+  margin-bottom: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-text h1{
+ font-size: 60px;
+}
+
+.title-and{
+  font-size: 280px;
+    position: absolute;
+    z-index: -1;
+    color: #ffc10045;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -43,10 +67,7 @@ header {
   justify-content: center;
 }
 
-h1 {
-  color: white;
-  font-family: 'Krona One', sans-serif;
-}
+
 
 
 img {
@@ -177,6 +198,10 @@ footer {
     justify-content: center;
   }
 
+  .title-text{
+    margin-bottom: 20px;
+  }
+
   img {
     order: 1;
   }
@@ -223,16 +248,20 @@ footer {
   body{
     background-size: auto;
   }
-   header h1{
-    width: 100%;
-    font-size: 15px;
-  }
   .container {
     width: 100%;
     flex-direction: column-reverse;
     justify-content: center;
   }
-
+  .title-text{
+    margin-bottom: 20px;
+  }
+  .title-text h1{
+    font-size: 20px;
+  }
+  .title-and{
+    font-size: 90px;
+  }
   img {
     order: 1;
     width: 50%;
