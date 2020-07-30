@@ -1,7 +1,7 @@
-function education(){
-    const arrowDown = document.querySelector(".ed-arrow-down");
-    const arrowRight = document.querySelector(".ed-arrow-right")
-    const educationInfo = document.querySelector(".ed-content");
+function education(arrowDownClass,arrowRightClass,educationInfoClass){
+    const arrowDown = document.querySelector(arrowDownClass);
+    const arrowRight = document.querySelector(arrowRightClass)
+    const educationInfo = document.querySelector(educationInfoClass);
     console.log(arrowDown)
 
     arrowDown.addEventListener("click", (event) => {
@@ -28,68 +28,39 @@ function education(){
     }
 }
 
-education();
+education(".ed-arrow-down", ".ed-arrow-right",".ed-content");
+education(".ex-arrow-down", ".ex-arrow-right",".experience-content");
+education(".skill-arrow-down", ".skill-arrow-right",".skills-content");
+education(".hobbies-arrow-down", ".hobbies-arrow-right",".hobbies-content");
 
-function experience(){
-    const arrowDown = document.querySelector(".ex-arrow-down");
-    const arrowRight = document.querySelector(".ex-arrow-right")
-    const experienceInfo = document.querySelector(".experience-content");
-    console.log(arrowDown)
 
-    arrowDown.addEventListener("click", (event) => {
-        event.preventDefault();
-        console.log(experienceInfo)
-        experienceInfo.style.display = "flex";
-        changeExArrows()
-    })
 
-    arrowRight.addEventListener("click", (event) => {
-        event.preventDefault();
-        experienceInfo.style.display = "none";
-        changeExArrows()
-    })
 
-    function changeExArrows() {
-        if (experienceInfo.style.display === "flex") {
-            arrowDown.style.display = "none";
-            arrowRight.style.display = "flex";
-        } else {
-            arrowDown.style.display = "flex";
-            arrowRight.style.display = "none";
-        }
-    }
+
+//Slide show
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-experience()
-
-function ShowSkills(){
-    const arrowDown = document.querySelector(".skill-arrow-down");
-    const arrowRight = document.querySelector(".skill-arrow-right")
-    const skillInfo = document.querySelector(".skills-content");
-    console.log(arrowDown)
-
-    arrowDown.addEventListener("click", (event) => {
-        event.preventDefault();
-        console.log(skillInfo)
-        skillInfo.style.display = "flex";
-        changeExArrows()
-    })
-
-    arrowRight.addEventListener("click", (event) => {
-        event.preventDefault();
-        skillInfo.style.display = "none";
-        changeExArrows()
-    })
-
-    function changeExArrows() {
-        if (skillInfo.style.display === "flex") {
-            arrowDown.style.display = "none";
-            arrowRight.style.display = "flex";
-        } else {
-            arrowDown.style.display = "flex";
-            arrowRight.style.display = "none";
-        }
-    }
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-ShowSkills()
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
