@@ -48,6 +48,7 @@ header{
     width: 100%;
     height: 10%;
     background-color: #f1d93e;
+    margin-bottom: 20px;
 }
 
 .arrow{
@@ -60,10 +61,8 @@ header{
 }
 
 .ed-content{
-    /* display: flex; */
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 20px;
     display: none;
 }
 
@@ -115,4 +114,30 @@ header{
 
 .ex-arrow-right{
     display: none;
+}
+
+.skill-arrow-right{
+    display: none;
+}
+
+.skills-content{
+    display: flex;
+    justify-content: space-around;
+}
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    width: 800px;
+    height: 620px;
+    background-color: #3B3B3B;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+
+.skills li{
+    align-self: flex-start;
+    font-size: 30px;
 }

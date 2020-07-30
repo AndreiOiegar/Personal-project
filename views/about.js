@@ -61,3 +61,35 @@ function experience(){
 }
 
 experience()
+
+function ShowSkills(){
+    const arrowDown = document.querySelector(".skill-arrow-down");
+    const arrowRight = document.querySelector(".skill-arrow-right")
+    const skillInfo = document.querySelector(".skills-content");
+    console.log(arrowDown)
+
+    arrowDown.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log(skillInfo)
+        skillInfo.style.display = "flex";
+        changeExArrows()
+    })
+
+    arrowRight.addEventListener("click", (event) => {
+        event.preventDefault();
+        skillInfo.style.display = "none";
+        changeExArrows()
+    })
+
+    function changeExArrows() {
+        if (skillInfo.style.display === "flex") {
+            arrowDown.style.display = "none";
+            arrowRight.style.display = "flex";
+        } else {
+            arrowDown.style.display = "flex";
+            arrowRight.style.display = "none";
+        }
+    }
+}
+
+ShowSkills()
