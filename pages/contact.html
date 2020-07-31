@@ -1,24 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/about.css">
+    <link rel="stylesheet" href="/styles/contact.css">
+    </link>
     <title>Contact</title>
 </head>
+
 <body>
     <header>
-
+        <a href="/pages/home.html"><img class="logo" src="/assets/logo.svg" /></a>
+        <ul class="navbar">
+            <li id="home-btn"><a href="/pages/home.html">Home</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/home.html">Portofolio</a></li>
+        </ul>
 
     </header>
+    <main>
+        <div class="contact-box">
+            <aside class="contact-info card">
+                <div class="contact-container">
+                    <div class="info-cont">
+                        <img class="cont-icon" src="/assets/location-icon-svg-29.jpg" />
+                        <div class="contact-data">
+                            <h1>Adress</h1>
+                            <p>nr.3, Recea, comuna Varsolt, judetul Salaj, Romania</p>
+                        </div>
+                    </div>
 
-    <div class="container">
+                    <div class="info-cont">
+                        <img class="cont-icon" src="/assets/phone-68-xxl.png" />
+                        <div class="contact-data">
+                            <h1>Let's talk</h1>
+                            <p>(+40) 751 095 860</p>
+                        </div>
+                    </div>
 
+                    <div class="info-cont">
+                        <img class="cont-icon" src="/assets/Mail-Icon-White-on-Grey.svg" />
+                        <div class="contact-data">
+                            <h1>Email me</h1>
+                            <p>andrei.oiegar@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
 
-    </div>
+            <section class="form-half card">
+                <form class="contact-form">
+                    <!-- <span class="contact-form-title">
+					Send Us A Message
+				</span> -->
 
+                    <label class="label-input" for="first-name">Tell me your name *</label>
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+                        <input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+                        <input class="input100" id="last-name" type="text" name="last-name" placeholder="Last name">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <label class="label-input" for="email">Enter your email *</label>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <label class="label-input" for="phone">Enter phone number</label>
+                    <div class="wrap-input100">
+                        <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <label class="label-input" for="message">Message *</label>
+                    <div class="wrap-input100 validate-input" data-validate="Message is required">
+                        <textarea id="message" class="input100" name="message"
+                            placeholder="Write us a message"></textarea>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="container-contact100-form-btn">
+                        <button class="contact100-form-btn">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="messages-user">
+            <h1>Your messages</h1>
+            <div class="messages-box">
+            
+            </div>
+        </div>
+        
+    </main>
     <footer>
+        <section class="socials">
+            <ul class="socials-list">
+                <li><a class="facebook" href="https://www.facebook.com/oiegar.andrei/"><i
+                            class="fab fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="instagram" href="https://www.instagram.com/andreioiegar/?hl=ro"><i
+                            class="fab fa-instagram"></i></a></li>
+                <li><a class="git" href="https://github.com/AndreiOiegar"><i class="fab fa-github"></i></a></li>
+                <li><a class="linkedin" href="https://www.linkedin.com/in/andrei-sorin-oiegar-1416ba193/"><i
+                            class="fab fa-linkedin"></i></a></li>
+                <li><a class="youtube"
+                        href="https://www.youtube.com/channel/UC8iW0Ytm_0VbMaicKmlJXSQ?view_as=subscriber"><i
+                            class="fab fa-youtube"></i></a></li>
+            </ul>
+        </section>
 
+        <section class="legals">
+            <ul class="legals-list">
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li>&copy; 2020 Copyright</li>
+            </ul>
+        </section>
     </footer>
-    
+<script src="/views/contact.js"></script>
 </body>
+
 </html>
