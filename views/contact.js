@@ -16,7 +16,7 @@ const commentsUser = document.querySelector(".comments-user")
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
    
- 
+    if(formValidation() !== false){
      messages.push({
          name: firstName.value + " " + lastName.value,
          phone: phoneNumber.value,
@@ -29,9 +29,10 @@ submitBtn.addEventListener('click', (event) => {
          mail: mailAdress.value,
          msg: message.value
      });
-     commentsUser.body.appendChild(node)
+     commentsUser.appendChild(node)
 
      console.log(node)
+    }
  })
 
 
@@ -87,4 +88,43 @@ function displayComments(messages, containerNode) {
         const messageNode = createMessageNode(message);
         containerNode.appendChild(messageNode);
     }
+}
+
+function formValidation(){
+
+    if(firstName.value.length < 4 || firstName.value === ""){
+        firstName.style.border = "2px solid red"
+        return false;
+    } else {
+        firstName.style.border = "2px solid green"
+    }
+    
+    if(lastName.value.length < 4 || lastName.value === ""){
+        lastName.style.border = "2px solid red"
+        return false;
+    } else {
+        lastName.style.border = "2px solid green"
+    }
+    
+    if(mailAdress.value.length < 4 || mailAdress.value === ""){
+        mailAdress.style.border = "2px solid red"
+        return false;
+    } else {
+        mailAdress.style.border = "2px solid green"
+    }
+
+    if(phoneNumber.value.length < 4 || phoneNumber.value === ""){
+        phoneNumber.style.border = "2px solid red"
+        return false;
+    } else {
+        phoneNumber.style.border = "2px solid green"
+    }
+
+    if(message.value.length < 4 || message.value === ""){
+        message.style.border = "2px solid red"
+        return false;
+    } else {
+        message.style.border = "2px solid green"
+    }
+    
 }
