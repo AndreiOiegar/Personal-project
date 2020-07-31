@@ -38,9 +38,9 @@ education(".hobbies-arrow-down", ".hobbies-arrow-right",".hobbies-content");
 
 
 //Slide show
+
 let slideIndex = 1;
 showSlides(slideIndex);
-
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -60,6 +60,7 @@ function showSlides(n) {
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
+      console.log(dots[i].className)
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
