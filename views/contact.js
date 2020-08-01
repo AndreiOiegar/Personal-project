@@ -1,8 +1,8 @@
 const messages = [{
-    name:"",
-    phone:"",
-    mail:"",
-    msg:"",
+    name: "",
+    phone: "",
+    mail: "",
+    msg: "",
 }]
 
 const firstName = document.getElementById("first-name");
@@ -13,27 +13,28 @@ const mailAdress = document.getElementById("email");
 const submitBtn = document.querySelector(".contact100-form-btn");
 const commentsUser = document.querySelector(".comments-user")
 
+
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
-   
-    if(formValidation() !== false){
-     messages.push({
-         name: firstName.value + " " + lastName.value,
-         phone: phoneNumber.value,
-         mail: mailAdress.value,
-         msg: message.value
-     });
-     let node = createMessageNode({
-         name: firstName.value + " " + lastName.value,
-         phone: phoneNumber.value,
-         mail: mailAdress.value,
-         msg: message.value
-     });
-     commentsUser.appendChild(node)
 
-     console.log(node)
+    if (formValidation() !== false) {
+        messages.push({
+            name: firstName.value + " " + lastName.value,
+            phone: phoneNumber.value,
+            mail: mailAdress.value,
+            msg: message.value
+        });
+        let node = createMessageNode({
+            name: firstName.value + " " + lastName.value,
+            phone: phoneNumber.value,
+            mail: mailAdress.value,
+            msg: message.value
+        });
+        commentsUser.appendChild(node)
+
+        console.log(node)
     }
- })
+})
 
 
 function createMessageNode(messages) {
@@ -65,16 +66,6 @@ function addParagraph(text) {
     return newP;
 }
 
-// function addPhone(num) {
-//     const newN = document.createElement("p");
-//     newN.innerText = num;
-//     return newN;
-// }
-// function addMail(mail) {
-//     const newM = document.createElement("p");
-//     newN.innerText = mail;
-//     return newM;
-// }
 function addTitle(title) {
     const h1 = document.createElement("h1");
     h1.innerText = title;
@@ -90,41 +81,41 @@ function displayComments(messages, containerNode) {
     }
 }
 
-function formValidation(){
+function formValidation() {
 
-    if(firstName.value.length < 4 || firstName.value === ""){
+    if (firstName.value.length < 4 || firstName.value === "") {
         firstName.style.border = "2px solid red"
         return false;
     } else {
         firstName.style.border = "2px solid green"
     }
-    
-    if(lastName.value.length < 4 || lastName.value === ""){
+
+    if (lastName.value.length < 4 || lastName.value === "") {
         lastName.style.border = "2px solid red"
         return false;
     } else {
         lastName.style.border = "2px solid green"
     }
-    
-    if(mailAdress.value.length < 4 || mailAdress.value === ""){
+
+    if (mailAdress.value.length < 4 || mailAdress.value === "") {
         mailAdress.style.border = "2px solid red"
         return false;
     } else {
         mailAdress.style.border = "2px solid green"
     }
 
-    if(phoneNumber.value.length < 4 || phoneNumber.value === ""){
+    if (phoneNumber.value.length < 4 || phoneNumber.value === "") {
         phoneNumber.style.border = "2px solid red"
         return false;
     } else {
         phoneNumber.style.border = "2px solid green"
     }
 
-    if(message.value.length < 4 || message.value === ""){
+    if (message.value.length < 4 || message.value === "") {
         message.style.border = "2px solid red"
         return false;
     } else {
         message.style.border = "2px solid green"
     }
-    
+
 }

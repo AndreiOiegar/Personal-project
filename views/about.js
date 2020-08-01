@@ -29,6 +29,7 @@ education(".ed-arrow-down", ".ed-arrow-right", ".ed-content");
 education(".ex-arrow-down", ".ex-arrow-right", ".experience-content");
 education(".skill-arrow-down", ".skill-arrow-right", ".skills-content");
 education(".hobbies-arrow-down", ".hobbies-arrow-right", ".hobbies-content");
+
 //Slide show
 let slideIndex = 1;
 showSlides(slideIndex);
