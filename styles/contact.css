@@ -149,7 +149,6 @@ textarea.input100 {
   padding-bottom: 15px;
 }
 
-/*---------------------------------------------*/
 
 .focus-input100 {
   position: absolute;
@@ -241,6 +240,7 @@ textarea.input100 {
 .messages-box {
   color: black;
   background-color: white;
+  margin-top: 20px;
 }
 
 .messages-box p {

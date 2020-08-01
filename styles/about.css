@@ -140,6 +140,10 @@ footer{width: 100%;}
     padding: 20px;
 }
 
+.skills:hover{
+    background-color: #515151;
+}
+
 .skills li {
     align-self: flex-start;
     font-size: 30px;
@@ -160,6 +164,10 @@ footer{width: 100%;}
     height: auto;
     background-color: #3B3B3B;
     margin-bottom: 20px;
+}
+
+.hobby:hover{
+    background-color: #515151;
 }
 
 .travel {
