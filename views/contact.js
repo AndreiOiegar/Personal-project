@@ -12,6 +12,7 @@ const message = document.getElementById("message");
 const mailAdress = document.getElementById("email");
 const submitBtn = document.querySelector(".contact100-form-btn");
 const commentsUser = document.querySelector(".comments-user")
+emailjs.init("user_PVcMgtXUCEJ8UWYbWuulQ");
 
 
 submitBtn.addEventListener('click', (event) => {
@@ -30,9 +31,21 @@ submitBtn.addEventListener('click', (event) => {
             mail: mailAdress.value,
             msg: message.value
         });
-        commentsUser.appendChild(node)
 
-        console.log(node)
+        console.log("hello")
+        const template_params = {
+            from_name: firstName.value + " " + lastName.value,
+            senderEmail: mailAdress.value,
+            first_name: firstName.value,
+            number: phoneNumber.value,
+            message_html: message.value
+        }
+        const service_id = "default_service";
+        const template_id = "template_MGSXBddP";
+        emailjs.send(service_id, template_id, template_params)
+            .then(function (response) {
+                console.log("success!", response.status, response.text)
+            })
     }
 })
 
@@ -55,8 +68,6 @@ function createMessageNode(messages) {
     containerBox.appendChild(m);
     containerBox.appendChild(p);
 
-
-
     return containerBox;
 }
 
@@ -72,6 +83,7 @@ function addTitle(title) {
     return h1;
 }
 
+
 function displayComments(messages, containerNode) {
 
     for (let idx = 0; idx < messages.length; idx++) {
@@ -81,41 +93,44 @@ function displayComments(messages, containerNode) {
     }
 }
 
+
 function formValidation() {
+    const red = "2px solid red";
+    const green = "2px solid green";
 
     if (firstName.value.length < 4 || firstName.value === "") {
-        firstName.style.border = "2px solid red"
+        firstName.style.border = red;
         return false;
     } else {
-        firstName.style.border = "2px solid green"
+        firstName.style.border = green;
     }
 
     if (lastName.value.length < 4 || lastName.value === "") {
-        lastName.style.border = "2px solid red"
+        lastName.style.border = red;
         return false;
     } else {
-        lastName.style.border = "2px solid green"
+        lastName.style.border = green;
     }
 
     if (mailAdress.value.length < 4 || mailAdress.value === "") {
-        mailAdress.style.border = "2px solid red"
+        mailAdress.style.border = red;
         return false;
     } else {
-        mailAdress.style.border = "2px solid green"
+        mailAdress.style.border = green;
     }
 
     if (phoneNumber.value.length < 4 || phoneNumber.value === "") {
-        phoneNumber.style.border = "2px solid red"
+        phoneNumber.style.border = red;
         return false;
     } else {
-        phoneNumber.style.border = "2px solid green"
+        phoneNumber.style.border = green;
     }
 
     if (message.value.length < 4 || message.value === "") {
-        message.style.border = "2px solid red"
+        message.style.border = red;
         return false;
     } else {
-        message.style.border = "2px solid green"
+        message.style.border = green;
     }
 
 }
