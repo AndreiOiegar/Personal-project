@@ -31,8 +31,6 @@ submitBtn.addEventListener('click', (event) => {
             mail: mailAdress.value,
             msg: message.value
         });
-
-        console.log("hello")
         const template_params = {
             from_name: firstName.value + " " + lastName.value,
             senderEmail: mailAdress.value,
@@ -44,7 +42,9 @@ submitBtn.addEventListener('click', (event) => {
         const template_id = "template_MGSXBddP";
         emailjs.send(service_id, template_id, template_params)
             .then(function (response) {
-                console.log("success!", response.status, response.text)
+                if(response.status = "200"){
+                    alert("Your message has been sent! Thank you!")
+                }
             })
     }
 })
