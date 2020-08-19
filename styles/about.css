@@ -55,6 +55,9 @@ body {
     margin-bottom: 20px;
     padding: 20px;
 }
+.ed-card:hover{
+    background-color: #515151;
+}
 
 .ed-card a {
     width: 80%;
