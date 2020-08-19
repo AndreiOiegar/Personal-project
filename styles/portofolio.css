@@ -13,3 +13,7 @@ iframe {
     border-radius: 20px;
     margin-bottom: 50px;
 }
+
+iframe:hover{
+    border-color: white;
+}
