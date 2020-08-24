@@ -43,7 +43,9 @@ submitBtn.addEventListener('click', (event) => {
         emailjs.send(service_id, template_id, template_params)
             .then(function (response) {
                 if(response.status = "200"){
-                    alert("Your message has been sent! Thank you!")
+                    if(confirm("Your message has been sent! Thank you!")){
+                        setTimeout(function(){window.location.reload()}, 5000);
+                    }
                 }
             })
     }
