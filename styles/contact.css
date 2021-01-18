@@ -21,7 +21,7 @@ body {
 }
 
 .contact-info {
-  background-image: url("/assets/bg-01.jpg");
+  background-image: url("./../assets/bg-01.jpg");
   width: 50%;
   background-repeat: no-repeat;
   background-size: cover;
